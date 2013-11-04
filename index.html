@@ -64,49 +64,108 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+        <h1>You've Spotted a Dog</h1>
+        <p>Tell us more about it!</p>
+        <p></p>
       </div>
     </div>
 
     <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-lg-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
-        </div>
-        <div class="col-lg-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
-       </div>
-        <div class="col-lg-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
-        </div>
-      </div>
+        <div class="row">
+            <div class="col">
+                <form role="form" action="">
+                    Need to add the following: Size, Color, Breed(s), Location Spotted/Found, Time Spotted/Found
+                    <div class="form-group">
+                        <label for="size">
+                            Size:
+                        </label>
+                        <select name="size" class="form-control">
+                            <option value="0">Tiny</option>
+                            <option value="1">Small</option>
+                            <option value="2">Medium</option>
+                            <option value="3">Large</option>
+                            <option value="4">Extra Large</option>
+                        </select>
+                        <span class="help-block">Would be nice to have pictures to help determine the difference between small and medium.</span>
+                    </div>
 
-      <hr>
+                    <div class="form-group">
+                        <label for="Color">
+                            Color:
+                        </label>
+                        <select name="color" class="form-control">
+                            <option value="brown">Brown</option>
+                            <option value="black">Black</option>
+                            <option value="white">White</option>
+                        </select>
+                        <span class="help-block">Colors have specific meanings in some breeds. And mean different things than normal colors.  Red for example is more of a light brownish color in some breeds.</span>
+                    </div>
 
-      <footer>
+                    <div class="form-group">
+                        <label for="breed">
+                            Breed:
+                        </label>
+                        <!-- Limit options based on size. -->
+                        <select name="breed" class="form-control">
+                            <option value="unknown">Don't Know</option>
+                            <option value="jrt">Jack Russel Terrier</option>
+                            <option value="gsd">German Shepherd</option>
+                        </select>
+                        <span class="help-block">Limit options based on size +/- 1 size.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="breed2">
+                            Breed 2 (Optional for mixed breeds):
+                        </label>
+                        <!-- Limit options based on size. -->
+                        <select name="breed2" class="form-control">
+                            <option value="jrt">Jack Russel Terrier</option>
+                            <option value="gsd">German Shepherd</option>
+                        </select>
+                        <span class="help-block">Only provide if they indicate mixed breed.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="location">
+                            Location Spotted/Found:
+                        </label>
+                        <input type="text" name="location" placeholder="Locations" class="form-control" value="">
+                        <span class="help-block">Location Spotted.  Should accept address & long/latitude & more vague answers.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">
+                            Time and Day Spotted:
+                        </label>
+                        <input type="datetime" name="time" placeholder="Time and Day" class="form-control" value="">
+                        <span class="help-block">Time and Date spotted.</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <footer>
         <p>&copy; Company 2013</p>
-      </footer>
+    </footer>
     </div> <!-- /container -->        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
 
         <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/vendor/backbone.min.js"></script>
+        <script src="js/vendor/backbone.babysitter.js"></script>
+        <script src="js/vendor/underscore.js"></script>
+        <script src="js/vendor/backbone.wreqr.js"></script>
+        <script src="js/vendor/backbone.marionette.min.js"></script>
 
         <script src="js/main.js"></script>
 
         <script>
+            /*
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
             g.src='//www.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
+            */
         </script>
     </body>
 </html>

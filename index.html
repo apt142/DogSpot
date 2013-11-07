@@ -73,71 +73,109 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <form role="form" action="">
-                    Need to add the following: Size, Color, Breed(s), Location Spotted/Found, Time Spotted/Found
+                <form role="form" action="" class="form-horizontal">
+                    <h2>Step 1: Where and When</h2>
                     <div class="form-group">
-                        <label for="size">
+                        <label for="time" class="col-sm-3 control-label">
+                            Time and Day Spotted:
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="datetime" name="time" placeholder="Time and Day" class="form-control" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="location" class="col-sm-3 control-label">
+                            Location Spotted/Found:
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="text" name="location" placeholder="Location" class="form-control" value="">
+                        </div>
+                    </div>
+
+                    <h2>Step 2: The Basics</h2>
+                    <div class="form-group">
+                        <label for="size" class="col-sm-3 control-label">
                             Size:
                         </label>
-                        <select name="size" class="form-control">
-                            <option value="0">Tiny</option>
-                            <option value="1">Small</option>
-                            <option value="2">Medium</option>
-                            <option value="3">Large</option>
-                            <option value="4">Extra Large</option>
-                        </select>
-                        <span class="help-block">Would be nice to have pictures to help determine the difference between small and medium.</span>
+                        <div class="col-sm-9">
+                            <select name="size" class="form-control">
+                                <option value="0">I don't know</option>
+                                <option value="1">Tiny</option>
+                                <option value="2">Small</option>
+                                <option value="3">Medium</option>
+                                <option value="4">Large</option>
+                                <option value="5">Extra Large</option>
+                            </select>
+                        </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="Color">
+                        <label for="Color" class="col-sm-3 control-label">
                             Color:
                         </label>
-                        <select name="color" class="form-control">
-                            <option value="brown">Brown</option>
-                            <option value="black">Black</option>
-                            <option value="white">White</option>
-                        </select>
-                        <span class="help-block">Colors have specific meanings in some breeds. And mean different things than normal colors.  Red for example is more of a light brownish color in some breeds.</span>
+                        <div class="col-sm-9">
+                            <select name="color" class="form-control">
+                                <option value="">I don't know</option>
+                                <option value="brown">Brown</option>
+                                <option value="black">Black</option>
+                                <option value="white">White</option>
+                            </select>
+                        </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="breed">
+                        <label for="collar" class="col-sm-3 control-label">
+                            The collar was:
+                        </label>
+                        <div class="col-sm-9">
+                            <select name="collar" class="form-control">
+                                <option value="">No Collar</option>
+                                <option value="blue">Blue</option>
+                                <option value="red">Red</option>
+                                <option value="green">Green</option>
+                                <option value="pink">Pink</option>
+                                <option value="leather">Leather</option>
+                                <option value="metal">Metal</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-9">
+                            <input type="button" class="btn btn-primary btn-lg" value="Report">
+                        </div>
+                    </div>
+
+
+                    <h2>Step 3: What else can you remember?</h2>
+                    <div class="form-group">
+                        <label for="breed" class="col-sm-3 control-label">
                             Breed:
                         </label>
                         <!-- Limit options based on size. -->
-                        <select name="breed" class="form-control">
-                            <option value="unknown">Don't Know</option>
-                            <option value="jrt">Jack Russel Terrier</option>
-                            <option value="gsd">German Shepherd</option>
-                        </select>
-                        <span class="help-block">Limit options based on size +/- 1 size.</span>
+                        <div class="col-sm-9">
+                            <select name="breed" class="form-control">
+                                <option value="">I don't know</option>
+                                <option value="jrt">Jack Russel Terrier</option>
+                                <option value="gsd">German Shepherd</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="breed2">
+                        <label for="breed2" class="col-sm-3 control-label">
                             Breed 2 (Optional for mixed breeds):
                         </label>
                         <!-- Limit options based on size. -->
-                        <select name="breed2" class="form-control">
-                            <option value="jrt">Jack Russel Terrier</option>
-                            <option value="gsd">German Shepherd</option>
-                        </select>
-                        <span class="help-block">Only provide if they indicate mixed breed.</span>
+                        <div class="col-sm-9">
+                            <select name="breed2" class="form-control">
+                                <option value="">Purebred / I don't know</option>
+                                <option value="jrt">Jack Russel Terrier</option>
+                                <option value="gsd">German Shepherd</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="location">
-                            Location Spotted/Found:
-                        </label>
-                        <input type="text" name="location" placeholder="Locations" class="form-control" value="">
-                        <span class="help-block">Location Spotted.  Should accept address & long/latitude & more vague answers.</span>
-                    </div>
-                    <div class="form-group">
-                        <label for="time">
-                            Time and Day Spotted:
-                        </label>
-                        <input type="datetime" name="time" placeholder="Time and Day" class="form-control" value="">
-                        <span class="help-block">Time and Date spotted.</span>
-                    </div>
+
                 </form>
             </div>
         </div>
@@ -158,6 +196,7 @@
         <script src="js/vendor/backbone.marionette.min.js"></script>
 
         <script src="js/main.js"></script>
+        <script src="js/actions/dogspot.js"></script>
 
         <script>
             /*

@@ -1,0 +1,29 @@
+{
+  "name": "Dog Spotter",
+  "version": "0.0.1",
+  "description": "Dog Tracking Software",
+  "keywords": [
+    "jquery",
+    "component"
+  ],
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "https://github.com/apt142/DogSpot",
+  "authors": [
+    "Cris Bettis <apt142@gmail.com>"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "modernizr": "~2.6.2",
+    "backbone": "~1.1.0",
+    "jquery": "~2.0.3",
+    "marionette": "~1.2.2"
+  }
+}

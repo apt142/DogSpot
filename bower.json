@@ -21,9 +21,6 @@
     "tests"
   ],
   "dependencies": {
-    "modernizr": "~2.6.2",
-    "backbone": "~1.1.0",
-    "jquery": "~2.0.3",
-    "marionette": "~1.2.2"
+    "requirejs": "~2.1.9"
   }
 }

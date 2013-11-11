@@ -5,15 +5,13 @@ module.exports = function(grunt) {
 
   var _               = require('underscore'),
       headerFiles     = [],
-      connectPort     = _.random(20000, 21000),
+      testingPort     = 8181,
       developmentPort = 8080,
       projectRoot     = __dirname;
 
   headerFiles = [
     'components/modernizr/modernizr.js',   // Browser feature sniffing
     'components/respond/respond.min.js',   // IE media query polyfill
-    'components/es5-shim/es5-shim.min.js', // Provide array.map to IE8
-    'app/helpers/raven_options.js',        // Ignore common errors
     'app/helpers/modernizr_filters.js',    // Filters for modernizr
     'app/helpers/debug.js'                 // Nerf console.log + debug
   ];
@@ -23,9 +21,9 @@ module.exports = function(grunt) {
     // Our unit tests need a server so they can fetch templates and ajax.
     // This only runs for the duration of the current grunt.
     connect: {
-      server: {
+      testing: {
         options: {
-          port: developmentPort,
+          port: testingPort,
           base: '.'
           //debug: true is a lifesaver for seeing the files loaded
         }
@@ -59,27 +57,26 @@ module.exports = function(grunt) {
     // grunt-template-jasmine-requirejs is the magic that loads our config file
     // and sets up the testing.
     jasmine: {
-      runner: {
+      dogspot: {
         options: {
-          host : 'http://127.0.0.1:' + connectPort + '/',
+          host : 'http://127.0.0.1:' + testingPort + '/',
           outfile: 'jasmine.html',
-          build: true, // We keep the outfile in place so we can browse to it.
-          specs: 'tests/jasmine/**/spec.js',
+          specs: ['tests/jasmine/**/spec.js', 'tests/jasmine/**/*Spec.js'],
           vendor: [
-            'public/components/jquery/jquery.js',
-            'public/components/jasmine-jquery/lib/jasmine-jquery.js',
+            'components/jquery/jquery.js',
+            'components/jasmine-jquery/lib/jasmine-jquery.js',
           ],
           helpers: headerFiles,
           template: require('grunt-template-jasmine-requirejs'),
           templateOptions: {
-            requireConfigFile: 'public/app/config.js',
+            requireConfigFile: 'app/config.js',
             requireConfig: {
-              baseUrl: 'public/app/',
+              baseUrl: 'app/',
               paths: {
                 sinon:
-                  'public/components/sinon/lib/sinon.js',
+                  'components/sinon/lib/sinon.js',
                 'jasmine-sinon':
-                  'public/components/jasmine-sinon/lib/jasmine-sinon.js'
+                  'components/jasmine-sinon/lib/jasmine-sinon.js'
               }
             }
           }
@@ -191,7 +188,11 @@ module.exports = function(grunt) {
   grunt.task.loadTasks('build/tasks');
 
   grunt.registerTask('lint', ['jshint']);
+
+  grunt.registerTask('test', ['jshint', 'connect:testing', 'jasmine:dogspot']);
+
   grunt.registerTask('local', ['connect:development']);
+
   grunt.registerTask('default', [
     'jshint', 'less:dev', 'uglify:header', 'index:dev'
   ]);

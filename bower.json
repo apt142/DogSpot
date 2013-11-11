@@ -1,26 +1,30 @@
 {
-  "name": "Dog Spotter",
-  "version": "0.0.1",
-  "description": "Dog Tracking Software",
-  "keywords": [
-    "jquery",
-    "component"
-  ],
-  "main": "index.html",
-  "license": "MIT",
-  "homepage": "https://github.com/apt142/DogSpot",
-  "authors": [
-    "Cris Bettis <apt142@gmail.com>"
-  ],
-  "private": true,
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
+  "name": "dogspot",
   "dependencies": {
-    "requirejs": "~2.1.9"
-  }
+    "almond": "~0.2.6",
+    "backbone": "~1.0.0",
+    "bootstrap": "~2.3.2",
+    "es5-shim": "~2.1.0",
+    "handlebars": "~1.0.0",
+    "jquery": "~2.0.3",
+    "modernizr": "~2.6.2",
+    "moment": "~2.3.0",
+    "requirejs": "~2.1.8",
+    "respond": "~1.3.0",
+    "routemanager": "*",
+    "sinon": "~1.7.3",
+    "underscore": "~1.5.2",
+    "vertebrae": "*",
+    "requirejs-text": "~2.0.10",
+    "requirejs-plugins": "~1.0.2",
+    "backbone.analytics": "*",
+    "underscore.string": "~2.3.3",
+    "jasmine-jquery": "~1.5.91",
+    "jasmine-sinon": "~0.1.0",
+    "nvd3": "~1.1.14-beta",
+    "backbone-computedfields": "*",
+    "font-awesome": "~4.0.0",
+    "backbone-filtered-collection": "~0.3.2"
+  },
+  "devDependencies": {}
 }

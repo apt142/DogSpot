@@ -1,0 +1,30 @@
+<div class="container">
+
+
+    <div class="row-fluid">
+        <h1>DogSpot</h1>
+    </div>
+
+    <hr>
+
+    <div class="row-fluid">
+        <div class="span6">
+            <a href="/dogs/new" class="btn btn-primary btn-large">Found a Dog</a>
+        </div>
+        <div class="span6">
+            <a href="dogs/" class="btn btn-primary btn-large">Lost a Dog</a>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row-fluid">
+        <h3>Recent Dogs</h3>
+        <ul>
+{{#dogs}}
+            <li><strong>{{name}}</strong>: {{description}}</li>
+{{/dogs}}
+        </ul>
+    </div>
+
+</div>

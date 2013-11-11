@@ -3,10 +3,11 @@
   "eqnull": false,
   "eqeqeq": true,
   "undef": true,
-  "strict": true,
   "trailing": true,
   "globals": {
     "jQuery": true,
-    "require": true
-  }
+    "require": true,
+    "define": true
+  },
+  "browser": true
 }

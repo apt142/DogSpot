@@ -1,0 +1,8 @@
+{
+  "dog": {
+    "id": 123,
+    "name": "Eddie",
+    "status": "found",
+    "description": "black with white paws"
+  }
+}

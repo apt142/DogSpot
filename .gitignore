@@ -1,2 +1,7 @@
 npm-debug.log
 node_modules/
+components/
+dist/
+.grunt/
+jasmine.html
+index.html

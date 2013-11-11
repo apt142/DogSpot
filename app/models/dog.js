@@ -15,7 +15,7 @@ define(function (require) {
   require('underscore_string');
 
   return Backbone.Model.extend({
-    // TODO: Url for dog CRUD,
+    urlRoot: '/api/dogs/',
     parse: function (response) {
       return response.dog || response;
     }

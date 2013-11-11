@@ -542,3 +542,29 @@ FileETag None
 # <IfModule mod_headers.c>
 #    Header set Connection Keep-Alive
 # </IfModule>
+
+
+# ----------------------------------------------------------------------
+# Backbone JS File Path Rewriting
+# ----------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+    Options -MultiViews
+
+    RewriteEngine On
+
+    # Relocate the favicons to a better location, less clutter in root
+    RewriteRule ^(favicon\.ico)$ /assets/favicon/$1 [PT]
+    RewriteRule ^(apple-touch-icon(-[\d]*x[\d]*){0,1}(-precomposed){0,1}\.png)$ /assets/favicon/$1 [PT]
+
+    # Exclude the template directory from url rewriting so that we get 404's for it
+    RewriteRule ^(app/templates) - [L]
+
+    # Exclude the dist directorty from url rewriting so that we get 404's for it
+    RewriteRule ^(dist) - [L]
+
+    # All unknown files are redirected to the index file, where backbone will handle routing
+    RewriteCond %{REQUEST_FILENAME} !\.(gif|jpe?g|html|css|js|php)$
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.html [L]
+</IfModule>

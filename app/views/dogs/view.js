@@ -1,5 +1,5 @@
 //
-// Index Welcome View for DogSpot
+// Dog Detail View
 // =============================================================================
 //
 // * Author: [Craig Davis](craig@there4development.com)
@@ -16,24 +16,17 @@ define(function (require) {
 
   return Backbone.View.extend({
 
-    template: 'index/welcome',
+    template: 'dogs/view',
 
     initialize: function (options) {
-      options = options || {};
-      this.dogCollection = options.dogCollection;
-
-      // Attach a promise to this view that we can hook for a complete callback
       this.deferred = $.Deferred();
-      // Extend this object with the promise interface
       this.deferred.promise(this);
     },
 
     render: function () {
       var view = this;
       app.fetchTemplate(view.template).done(function (tmpl) {
-        view.$el.html(tmpl({
-          dogs: view.collection.toJSON()
-        }));
+        view.$el.html(tmpl(view.model.toJSON()));
         view.deferred.resolve();
       });
       return view;
@@ -42,4 +35,4 @@ define(function (require) {
 
 });
 
-/* End of file welcome.js */
+/* End of file view.js */

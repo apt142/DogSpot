@@ -12,7 +12,7 @@
             <a href="/dogs/new" class="btn btn-primary btn-large">Found a Dog</a>
         </div>
         <div class="span6">
-            <a href="dogs/" class="btn btn-primary btn-large">Lost a Dog</a>
+            <a href="/dogs" class="btn btn-primary btn-large">Lost a Dog</a>
         </div>
     </div>
 
@@ -22,7 +22,7 @@
         <h3>Recent Dogs</h3>
         <ul>
 {{#dogs}}
-            <li><strong>{{name}}</strong>: {{description}}</li>
+            <li><a href="/dogs/{{id}}">{{name}}</a>: {{description}}</li>
 {{/dogs}}
         </ul>
     </div>

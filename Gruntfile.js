@@ -3,11 +3,31 @@
 module.exports = function(grunt) {
   'use strict';
 
-  var _               = require('underscore'),
-      headerFiles     = [],
-      testingPort     = 8181,
-      developmentPort = 8080,
-      projectRoot     = __dirname;
+  var _                   = require('underscore'),
+      headerFiles         = [],
+      testingPort         = 8181,
+      developmentPort     = 8080,
+      projectRoot         = __dirname,
+      mountFolder, pushStateHook;
+
+  mountFolder = function (connect, dir) {
+    return connect.static(require('path').resolve(dir));
+  };
+
+  pushStateHook = function (url) {
+    var path    = require('path'),
+        request = require('request'); // Need to be added into package.json
+    return function (req, res, next) {
+      var ext = path.extname(req.url);
+      if ((ext === "" || ext === ".html") &&
+          req.url !== "/" && !/templates/.test(req.url)
+      ) {
+        req.pipe(request(url)).pipe(res);
+      } else {
+        next();
+      }
+    };
+  };
 
   headerFiles = [
     'components/modernizr/modernizr.js',   // Browser feature sniffing
@@ -24,7 +44,7 @@ module.exports = function(grunt) {
       testing: {
         options: {
           port: testingPort,
-          base: '.'
+          base: '.',
           //debug: true is a lifesaver for seeing the files loaded
         }
       },
@@ -32,8 +52,19 @@ module.exports = function(grunt) {
         options: {
           port: 8080,
           base: '.',
-          keepalive: true
+          keepalive: true,
+          debug: true,
+          middleware: function (connect) {
+            return [
+              pushStateHook("http://localhost:8080"),
+              mountFolder(connect, 'assets/favicon'),
+              mountFolder(connect, '')
+            ];
+          }
         }
+      },
+      rules: {
+        '/favicon.ico': '/assets/favicon.ico'
       }
     },
 
@@ -177,6 +208,7 @@ module.exports = function(grunt) {
 
 
   // ## Custom and Imported Tasks
+  grunt.loadNpmTasks('grunt-connect-rewrite');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-jasmine');

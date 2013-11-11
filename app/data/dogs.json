@@ -1,0 +1,15 @@
+{
+  "dogs": [
+    {
+      "id": 123,
+      "name": "Ralph",
+      "status": "lost",
+      "description": "Brown with light spots on his nose"
+    }, {
+      "id": 124,
+      "name": "Eddie",
+      "status": "found",
+      "description": "black with white paws"
+    }
+  ]
+}

@@ -18,8 +18,14 @@ define(function (require) {
 
   return Backbone.Vertebrae.extend({
     routes: {
-      '/pusher/auth': {
-        POST: function () { return ''; }
+      '/api/dogs': {
+        GET: function () { return require('text!data/dogs.json'); }
+      },
+      '/api/dogs/?filter=recent': {
+        GET: function () { return require('text!data/dogs.json'); }
+      },
+      '/api/dogs/:id': {
+        GET: function () { return require('text!data/dog.json'); }
       }
     }
   });

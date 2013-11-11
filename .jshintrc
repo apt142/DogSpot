@@ -8,5 +8,6 @@
     "jQuery": true,
     "require": true,
     "define": true
-  }
+  },
+  "browser": true
 }

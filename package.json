@@ -1,22 +1,26 @@
 {
-  "name": "DogSpot",
+  "name": "DogSpotter",
   "version": "0.0.1",
   "description": "Dog Tracking Software",
   "main": "index.js",
-  "scripts": {
-    "test": "grunt test"
+  "author": {
+    "name" : "Cris Bettis",
+    "email" : "apt142@gmail.com",
+    "url" : "http://barnyrubble.tumblr.com/"
   },
+  "license": "BSD-2-Clause",
   "repository": {
     "type": "git",
     "url": "https://github.com/apt142/DogSpot.git"
   },
-  "author": "Cris Bettis <apt142@gmail.com>",
-  "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/apt142/DogSpot/issues"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-jshint": "~0.7.1"
+  },
+  "scripts": {
+    "test": "grunt test"
   }
 }

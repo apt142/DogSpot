@@ -4,9 +4,9 @@
   "description": "Dog Tracking Software",
   "main": "index.js",
   "author": {
-    "name" : "Cris Bettis",
-    "email" : "apt142@gmail.com",
-    "url" : "http://barnyrubble.tumblr.com/"
+    "name": "Cris Bettis",
+    "email": "apt142@gmail.com",
+    "url": "http://barnyrubble.tumblr.com/"
   },
   "license": "BSD-2-Clause",
   "repository": {
@@ -18,7 +18,15 @@
   },
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-contrib-jshint": "~0.7.1"
+    "grunt-contrib-jshint": "~0.7.1",
+    "grunt-contrib-jasmine": "~0.5.2",
+    "grunt-template-jasmine-requirejs": "~0.1.7",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-less": "~0.8.1",
+    "grunt-contrib-connect": "~0.5.0",
+    "mustache": "~0.7.3",
+    "underscore": "~1.5.2",
+    "html-minifier": "~0.5.4"
   },
   "scripts": {
     "test": "grunt test"

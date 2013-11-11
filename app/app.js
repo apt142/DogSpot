@@ -1,11 +1,10 @@
 //
-// LearningStation Test Runner
+// DogSpot Application
 // =============================================================================
 //
 // Application namespace and core config
 //
-// * Author: [Sean Zaferopolos](sean.zaferopolos@learningstation.com)
-// * Author: [Craig Davis](craig.davis@learningstation.com)
+// * Author: [Craig Davis](craig@there4development.com)
 // * Since: 8/12/2012
 //
 // -----------------------------------------------------------------------------

@@ -24,7 +24,8 @@
     "nvd3": "~1.1.14-beta",
     "backbone-computedfields": "*",
     "font-awesome": "~4.0.0",
-    "backbone-filtered-collection": "~0.3.2"
+    "backbone-filtered-collection": "~0.3.2",
+    "backbone-forms": "~0.13.0"
   },
   "devDependencies": {}
 }

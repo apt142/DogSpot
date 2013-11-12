@@ -22,7 +22,10 @@
         <h3>Recent Dogs</h3>
         <ul>
 {{#dogs}}
-            <li><strong>{{name}}</strong>: {{description}}</li>
+            <li>
+                <div><strong>{{name}}</strong>: {{description}}</div>
+                <div>{{#each characteristics}}<strong>{{@key}}</strong>:{{this}}, {{/each}}</div>
+            </li>
 {{/dogs}}
         </ul>
     </div>

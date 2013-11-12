@@ -1,0 +1,12 @@
+{
+  "locations": {
+    "id": 123,
+    "address1": "301 S. Brevard St",
+    "address2": "",
+    "city": "Charlotte",
+    "state": "NC",
+    "zip": "28202",
+    "longitude": "35.222951",
+    "latitude": "-80.842349"
+  }
+}

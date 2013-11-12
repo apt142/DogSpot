@@ -10,10 +10,10 @@
 define(function (require) {
   'use strict';
 
-  var app             = require('app'),
-      Backbone        = require('backbone_loader'),
-      WelcomeView     = require('views/index/welcome'),
-      DogCollection   = require('collections/dogs');
+  var app                = require('app'),
+      Backbone           = require('backbone_loader'),
+      WelcomeView        = require('views/index/welcome'),
+      DogCollection      = require('collections/dogs');
 
   return Backbone.Router.extend({
 
@@ -26,6 +26,7 @@ define(function (require) {
 
       // TODO: Update to use a marionette collection view
       dogCollection = new DogCollection();
+
       view = new WelcomeView({
         collection: dogCollection
       });

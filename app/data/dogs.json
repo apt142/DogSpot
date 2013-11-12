@@ -2,14 +2,27 @@
   "dogs": [
     {
       "id": 123,
-      "name": "Ralph",
+      "name": "George",
       "status": "lost",
-      "description": "Brown with light spots on his nose"
+      "location_id": 123,
+      "description": "Brown with light spots on his nose",
+      "characteristics": {
+        "breed": "Australian Shepherd",
+        "size": "medium",
+        "collar": "blue"
+      }
+
     }, {
       "id": 124,
       "name": "Eddie",
       "status": "found",
-      "description": "black with white paws"
+      "location_id": 124,
+      "description": "black with white paws",
+      "characteristics": {
+        "breed": "Pit Bull",
+        "size": "medium",
+        "collar": "green"
+      }
     }
   ]
 }

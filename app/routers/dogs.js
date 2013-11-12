@@ -11,21 +11,37 @@ define(function (require) {
   'use strict';
 
   var app             = require('app'),
-      Backbone        = require('backbone_loader');
+      Backbone        = require('backbone_loader'),
+      DogModel        = require('models/dog'),
+      DogView         = require('views/dogs/view');
 
   return Backbone.Router.extend({
 
     routes: {
-      '': 'searchDogs',
-      '/new': 'newDogForm'
+      ''    : 'listDogs',
+      'new' : 'newDogForm',
+      ':id' : 'dogDetail'
     },
 
-    searchDogs: function () {
-      window.console.log('Search for dogs');
+    dogDetail: function (id) {
+      var view, model;
+
+      model = new DogModel({ id: id });
+      view = new DogView({
+        model: model
+      });
+
+      model.fetch().done(function () {
+        app.mainView.show(view);
+      });
+    },
+
+    listDogs: function () {
+      console.log('List dogs');
     },
 
     newDogForm: function () {
-      window.console.log('Search for dogs');
+      console.log('Add a new dog');
     }
   });
 });

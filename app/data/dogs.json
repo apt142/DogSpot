@@ -6,10 +6,29 @@
       "status": "lost",
       "location_id": 123,
       "description": "Brown with light spots on his nose",
-      "characteristics": {
-        "breed": "Australian Shepherd",
-        "size": "medium",
-        "collar": "blue"
+      "characteristics": [
+        {
+          "attribute": "breed",
+          "value": "Australian Shepherd"
+        },
+        {
+          "attribute": "size",
+          "value": "medium"
+        },
+        {
+          "attribute": "collar",
+          "value": "blue"
+        }
+      ],
+      "location": {
+        "id": 123,
+        "address1": "301 S. Brevard St",
+        "address2": "",
+        "city": "Charlotte",
+        "state": "NC",
+        "zip": "28202",
+        "longitude": "35.222951",
+        "latitude": "-80.842349"
       }
 
     }, {
@@ -18,10 +37,28 @@
       "status": "found",
       "location_id": 124,
       "description": "black with white paws",
-      "characteristics": {
-        "breed": "Pit Bull",
-        "size": "medium",
-        "collar": "green"
+      "characteristics": [
+        {
+          "attribute": "breed",
+          "value": "Pit Bull"
+        },
+        {
+          "attribute": "size",
+          "value": "medium"
+        },
+        {
+          "attribute": "collar",
+          "value": "green"
+        }
+      ],
+      "location": {
+        "address1": "508 Dodge St",
+        "address2": "",
+        "city": "Kannapolis",
+        "state": "NC",
+        "zip": "28083",
+        "longitude": "35.484244",
+        "latitude": "-80.617999"
       }
     }
   ]

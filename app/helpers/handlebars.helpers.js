@@ -23,6 +23,17 @@ define(['underscore', 'handlebars'], function (_, Handlebars) {
     window.console.groupEnd();
   });
 
+  Handlebars.registerHelper('capitalize', function(value) {
+    if(typeof value === 'string') {
+      var str = value.toLowerCase();
+      str = str.replace(/\w+/g, function(a){
+        return a.charAt(0).toUpperCase() + a.substr(1).toLowerCase();
+      });
+      return new Handlebars.SafeString(str);
+    } else {
+      return '';
+    }
+  });
 });
 
 /* End of file handlebars.helpers.js */

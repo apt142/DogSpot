@@ -19,15 +19,22 @@
     <hr>
 
     <div class="row-fluid">
-        <h3>Recent Dogs</h3>
-        <ul>
+        <div class="span6">
+            <h3>Tell us about your lost dog</h3>
+        </div>
+        <div class="span6">
+            <h3>Recently Spotted Dogs</h3>
+            <ul class="dog-list">
 {{#dogs}}
-            <li>
-                <div><strong>{{name}}</strong>: {{description}}</div>
-                <div>{{#each characteristics}}<strong>{{@key}}</strong>:{{this}}, {{/each}}</div>
-            </li>
+                <li>
+                    <div><strong>{{name}}</strong>: {{description}}</div>
+                    <ul class="dog-attributes">
+                        {{#each characteristics}}<li><strong>{{capitalize this.attribute}}</strong>:{{this.value}}</li>{{/each}}
+                    </ul>
+                </li>
 {{/dogs}}
-        </ul>
+            </ul>
+        </div>
     </div>
 
 </div>

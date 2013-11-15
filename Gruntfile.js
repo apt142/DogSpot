@@ -44,7 +44,7 @@ module.exports = function(grunt) {
       testing: {
         options: {
           port: testingPort,
-          base: '.',
+          base: '.'
           //debug: true is a lifesaver for seeing the files loaded
         }
       },
@@ -116,7 +116,7 @@ module.exports = function(grunt) {
     },
 
     jshint: {
-      files: ['app/**/*.js'],
+      files: ['app/**/*.js', 'app/**/*.json'],
       options: {
         jshintrc: true,
       }
@@ -223,7 +223,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('test', ['jshint', 'connect:testing', 'jasmine:dogspot']);
 
-  grunt.registerTask('local', ['connect:development']);
+  grunt.registerTask('local', ['jshint', 'index:dev', 'connect:development']);
 
   grunt.registerTask('default', [
     'jshint', 'less:dev', 'uglify:header', 'index:dev'

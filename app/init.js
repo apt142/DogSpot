@@ -14,8 +14,9 @@ require([
   'backbone_loader',
   'helpers/mock',
   'routers/index',
-  'routers/dogs'
-], function (app, $, _, Backbone, Mock, IndexRouter, DogsRouter) {
+  'routers/dogs',
+  'routers/my'
+], function (app, $, _, Backbone, Mock, IndexRouter, DogsRouter, MyRouter) {
   "use strict";
 
   // Organize our initializers
@@ -33,7 +34,8 @@ require([
     var AppRouter = Backbone.RouteManager.extend({
       routes: {
         ''     : IndexRouter,
-        'dogs/' : DogsRouter
+        'dogs/' : DogsRouter,
+        'my/'   : MyRouter
       }
     });
     app.router = new AppRouter();

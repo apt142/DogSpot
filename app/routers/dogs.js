@@ -37,11 +37,11 @@ define(function (require) {
     },
 
     listDogs: function () {
-      console.log('List dogs');
+      window.console.log('List dogs');
     },
 
     newDogForm: function () {
-      console.log('Add a new dog');
+      window.console.log('Add a new dog');
     }
   });
 });

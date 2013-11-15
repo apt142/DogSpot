@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row-fluid">
+        <h1>DogSpot</h1>
+    </div>
+
+    <hr>
+
+    <div class="row-fluid">
+        <div class="span6">
+            <section class="dog-detail">
+                <header>
+                    <div class="pic">
+                        Pic Goes Here
+                    </div>
+                    <h3>Buttons</h3>
+                    <div class="clearfix"></div>
+                </header>
+                <h4>Is a:</h4>
+                <p>Small Female Jack Russell Terrier mix.</p>
+
+                <h4>She was last seen at:</h4>
+                <p>1234 Main St, Concord, NC 28075</p>
+                <footer>
+                    Links to leads and resources go here.
+                </footer>
+            </section>
+        </div>
+        <div class="span6">
+            <h3>Recent sightings in the area</h3>
+            <ul class="dog-list">
+                {{#dogs}}
+                <li>
+                    <div><strong>{{name}}</strong>: {{description}}</div>
+                    <ul class="dog-attributes">
+                        {{#each characteristics}}<li><strong>{{capitalize this.attribute}}</strong>:{{this.value}}</li>{{/each}}
+                    </ul>
+                </li>
+                {{/dogs}}
+            </ul>
+        </div>
+    </div>
+
+</div>

@@ -119,6 +119,7 @@ module.exports = function(grunt) {
       files: ['app/**/*.js', 'app/**/*.json'],
       options: {
         jshintrc: true,
+        reporter: require('jshint-stylish')
       }
     },
 

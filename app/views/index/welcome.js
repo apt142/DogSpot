@@ -12,7 +12,8 @@ define(function (require) {
 
   var $        = require('jquery'),
       app      = require('app'),
-      Backbone = require('backbone_loader');
+      Backbone = require('backbone_loader'),
+      Dropdown = require('bootstrap/bootstrap-dropdown');
 
   return Backbone.View.extend({
 

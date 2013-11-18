@@ -1,40 +1,159 @@
 <div class="container">
-
-
     <div class="row-fluid">
         <h1>DogSpot</h1>
     </div>
-
-    <hr>
-
+    <!-- Start Nav -->
     <div class="row-fluid">
-        <div class="span6">
-            <a href="/dogs/new" class="btn btn-primary btn-large">Found a Dog</a>
-        </div>
-        <div class="span6">
-            <a href="dogs/" class="btn btn-primary btn-large">Lost a Dog</a>
+        <div class="span12">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <a class="brand" href="/">Dog Spot!</a>
+                    <ul class="nav">
+                        <li class="dropdown active">
+                            <a href="/my/" class="dropdown-toggle" data-toggle="dropdown">
+                                Find My Dog
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/my/1">Buttons</a></li>
+                                <li><a href="/my/2">Fluffy</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/dogs/new">Report Dog</a></li>
+                        <li><a href="/dogs/">My Dogs Sitings</a></li>
+                        <li><a href="#">Link</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
-
-    <hr>
+    <!-- End Nav -->
 
     <div class="row-fluid">
         <div class="span6">
-            <h3>Tell us about your lost dog</h3>
-        </div>
-        <div class="span6">
+            <h3>Facebook Login</h3>
+            <p>-- OR (depending on login status) --</p>
+            <hr>
             <h3>Recently Spotted Dogs</h3>
             <ul class="dog-list">
-{{#dogs}}
+                {{#dogs}}
                 <li>
                     <div><strong>{{name}}</strong>: {{description}}</div>
                     <ul class="dog-attributes">
                         {{#each characteristics}}<li><strong>{{capitalize this.attribute}}</strong>:{{this.value}}</li>{{/each}}
                     </ul>
                 </li>
-{{/dogs}}
+                {{/dogs}}
             </ul>
         </div>
+
+        <div class="span6">
+            <h2>Tell us about your lost dog</h3>
+            <form role="form" action="" class="form-horizontal">
+                <h3>Step 1: Where and When</h2>
+                <div class="form-group">
+                    <label for="time" class="col-sm-3 control-label">
+                        Time and Day Spotted:
+                    </label>
+                    <div class="col-sm-9">
+                        <input type="datetime" name="time" placeholder="Time and Day" class="form-control" value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="location" class="col-sm-3 control-label">
+                        Location Spotted/Found:
+                    </label>
+                    <div class="col-sm-9">
+                        <input type="text" name="location" placeholder="Location" class="form-control" value="">
+                    </div>
+                </div>
+
+                <h3>Step 2: The Basics</h3>
+                <div class="form-group">
+                    <label for="size" class="col-sm-3 control-label">
+                        Size:
+                    </label>
+                    <div class="col-sm-9">
+                        <select name="size" class="form-control">
+                            <option value="0">I don't know</option>
+                            <option value="1">Tiny</option>
+                            <option value="2">Small</option>
+                            <option value="3">Medium</option>
+                            <option value="4">Large</option>
+                            <option value="5">Extra Large</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="Color" class="col-sm-3 control-label">
+                        Color:
+                    </label>
+                    <div class="col-sm-9">
+                        <select name="color" class="form-control">
+                            <option value="">I don't know</option>
+                            <option value="brown">Brown</option>
+                            <option value="black">Black</option>
+                            <option value="white">White</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="collar" class="col-sm-3 control-label">
+                        The collar was:
+                    </label>
+                    <div class="col-sm-9">
+                        <select name="collar" class="form-control">
+                            <option value="">No Collar</option>
+                            <option value="blue">Blue</option>
+                            <option value="red">Red</option>
+                            <option value="green">Green</option>
+                            <option value="pink">Pink</option>
+                            <option value="leather">Leather</option>
+                            <option value="metal">Metal</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-9">
+                        <input type="button" class="btn btn-primary btn-lg" value="Report">
+                    </div>
+                </div>
+
+
+                <h3>Step 3: What else can you remember?</h3>
+                <div class="form-group">
+                    <label for="breed" class="col-sm-3 control-label">
+                        Breed:
+                    </label>
+                    <!-- Limit options based on size. -->
+                    <div class="col-sm-9">
+                        <select name="breed" class="form-control">
+                            <option value="">I don't know</option>
+                            <option value="jrt">Jack Russel Terrier</option>
+                            <option value="gsd">German Shepherd</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="breed2" class="col-sm-3 control-label">
+                        Breed 2 (Optional for mixed breeds):
+                    </label>
+                    <!-- Limit options based on size. -->
+                    <div class="col-sm-9">
+                        <select name="breed2" class="form-control">
+                            <option value="">Purebred / I don't know</option>
+                            <option value="jrt">Jack Russel Terrier</option>
+                            <option value="gsd">German Shepherd</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+
     </div>
 
 </div>

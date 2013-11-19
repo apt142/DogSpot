@@ -1,0 +1,22 @@
+[
+  {
+    "id" : 1,
+    "label" : "tiny"
+  },
+  {
+    "id" : 2,
+    "label" : "small"
+  },
+  {
+    "id" : 3,
+    "label" : "medium"
+  },
+  {
+    "id" : 4,
+    "label" : "large"
+  },
+  {
+    "id" : 5,
+    "label" : "very large"
+  }
+]

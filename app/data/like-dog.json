@@ -1,0 +1,34 @@
+{
+  "dogs": [
+    {
+      "id": 124,
+      "name": "Eddie (Like Dog)",
+      "status": "found",
+      "location_id": 124,
+      "description": "black with white paws",
+      "characteristics": [
+        {
+          "attribute": "breed",
+          "value": "Pit Bull"
+        },
+        {
+          "attribute": "size",
+          "value": "medium"
+        },
+        {
+          "attribute": "collar",
+          "value": "green"
+        }
+      ],
+      "location": {
+        "address1": "508 Dodge St",
+        "address2": "",
+        "city": "Kannapolis",
+        "state": "NC",
+        "zip": "28083",
+        "longitude": "35.484244",
+        "latitude": "-80.617999"
+      }
+    }
+  ]
+}

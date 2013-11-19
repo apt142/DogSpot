@@ -1,0 +1,43 @@
+[
+  {
+    "attribute": "furr pattern",
+    "values": [
+      "solid",
+      "brindle",
+      "spotted"
+    ]
+  },
+  {
+    "attribute": "snout",
+    "values": [
+      "pug nosed",
+      "regular",
+      "pointy"
+    ]
+  },
+  {
+    "attribute": "tail",
+    "values": [
+      "long",
+      "short",
+      "cropped"
+    ]
+  },
+  {
+    "attribute": "gender",
+    "values": [
+      "unknown",
+      "male",
+      "female"
+    ]
+  },
+  {
+    "attribute": "ears",
+    "values": [
+      "long",
+      "regular",
+      "upright",
+      "cropped"
+    ]
+  }
+]

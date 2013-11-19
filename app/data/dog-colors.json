@@ -1,0 +1,32 @@
+[
+  {
+    "id"    : 0,
+    "label" : "brown",
+    "rgb"   : "333311"
+  },
+  {
+    "id"    : 1,
+    "label" : "black",
+    "rgb"   : "000000"
+  },
+  {
+    "id"    : 2,
+    "label" : "white",
+    "rgb"   : "ffffff"
+  },
+  {
+    "id"    : 3,
+    "label" : "light brown",
+    "rgb"   : "666622"
+  },
+  {
+    "id"    : 4,
+    "label" : "golden",
+    "rgb"   : "ffff00"
+  },
+  {
+    "id"    : 5,
+    "label" : "red",
+    "rgb"   : "ff0000"
+  }
+]

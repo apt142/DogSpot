@@ -1,0 +1,8 @@
+{
+  "user" : {
+    "id"         : 1,
+    "firstname"  : "Cris",
+    "lastname"   : "Bettis",
+    "phone"      : "980.555.1234"
+  }
+}

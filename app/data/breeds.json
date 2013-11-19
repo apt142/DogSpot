@@ -1,0 +1,31 @@
+[
+  {
+    "name" : "Chihuahua",
+    "size" : 1,
+    "range" : 1
+  },
+
+  {
+    "name" : "Jack Russell Terrier",
+    "size" : 2,
+    "range" : 2
+  },
+
+  {
+    "name" : "Australian Shepherd",
+    "size" : 3,
+    "range" : 3
+  },
+
+  {
+    "name" : "German Shepard",
+    "size" : 4,
+    "range" : 4
+  },
+
+  {
+    "name" : "English Mastiff",
+    "size" : 5,
+    "range" : 5
+  }
+]

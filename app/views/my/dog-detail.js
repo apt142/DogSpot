@@ -20,9 +20,8 @@ define(function (require) {
 
     initialize: function (options) {
       options = options || {};
+      this.navView = options.nav;
       this.dogCollection = options.dogCollection;
-
-      window.console.log('dog-detail view');
 
       // Attach a promise to this view that we can hook for a complete callback
       this.deferred = $.Deferred();
@@ -32,12 +31,18 @@ define(function (require) {
 
     render: function () {
       var view = this;
+      view.deferred.done(function() {
+        view.navView.render();
+      });
+
+
       app.fetchTemplate(view.template).done(function (tmpl) {
         view.$el.html(tmpl({
           dogs: view.collection.toJSON()
         }));
         view.deferred.resolve();
       });
+
       return view;
     }
   });

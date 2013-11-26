@@ -21,6 +21,7 @@ define(function (require) {
 
     initialize: function (options) {
       options = options || {};
+      this.navView = options.nav;
       this.dogCollection = options.dogCollection;
 
       // Attach a promise to this view that we can hook for a complete callback
@@ -36,9 +37,15 @@ define(function (require) {
           dogs: view.collection.toJSON()
         }));
         view.deferred.resolve();
+        view.deferred.done(function() {
+          $(this.el).append(view.el);
+          view.navView.render();
+        });
       });
       return view;
     }
+
+
   });
 
 });

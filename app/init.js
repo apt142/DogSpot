@@ -34,8 +34,8 @@ require([
     var AppRouter = Backbone.RouteManager.extend({
       routes: {
         ''     : IndexRouter,
-        'dogs/' : DogsRouter,
-        'my/'   : MyRouter
+        'dogs/': DogsRouter,
+        'my/'  : MyRouter
       }
     });
     app.router = new AppRouter();

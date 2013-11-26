@@ -13,6 +13,7 @@ define(function (require) {
   var app                = require('app'),
       Backbone           = require('backbone_loader'),
       WelcomeView        = require('views/index/welcome'),
+      NavView            = require('views/common/nav'),
       DogCollection      = require('collections/dogs');
 
   return Backbone.Router.extend({
@@ -22,13 +23,14 @@ define(function (require) {
     },
 
     showWelcome: function () {
-      var view, dogCollection;
+      var view, navView, dogCollection;
 
       // TODO: Update to use a marionette collection view
       dogCollection = new DogCollection();
-
+      navView = new NavView();
       view = new WelcomeView({
-        collection: dogCollection
+        collection: dogCollection,
+        nav: navView
       });
 
       // TODO: More marionette here

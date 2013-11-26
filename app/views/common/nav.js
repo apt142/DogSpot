@@ -1,5 +1,5 @@
 //
-// My Dog Detail View for DogSpot
+// Index Welcome View for DogSpot
 // =============================================================================
 //
 // * Author: [Cris Bettis](apt142@gmail.com)
@@ -10,18 +10,15 @@
 define(function (require) {
   "use strict";
 
-  var $        = require('jquery'),
+  var $      = require('jquery'),
     app      = require('app'),
     Backbone = require('backbone_loader');
 
   return Backbone.View.extend({
 
-    template: 'my/index',
+    template: 'common/nav',
 
-    initialize: function (options) {
-      options = options || {};
-      // this.dogCollection = options.dogCollection;
-
+    initialize: function () {
       // Attach a promise to this view that we can hook for a complete callback
       this.deferred = $.Deferred();
       // Extend this object with the promise interface
@@ -31,12 +28,11 @@ define(function (require) {
     render: function () {
       var view = this;
       app.fetchTemplate(view.template).done(function (tmpl) {
-        view.$el.html(tmpl({
-          // dogs: view.collection.toJSON()
-        }));
+        view.$el.html(tmpl({}));
         view.deferred.resolve();
-        view.navView.render();
+        $('body').find('#header').html(view.$el);
       });
+
       return view;
     }
   });

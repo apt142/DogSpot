@@ -16,8 +16,6 @@ define(function (require) {
     DogModel        = require('models/dog'),
     SummaryView     = require('views/my/summary'),
     DetailView      = require('views/my/dog-detail'),
-    NavView         = require('views/common/nav'),
-
     DogCollection   = require('collections/dogs');
 
   return Backbone.Router.extend({
@@ -29,13 +27,11 @@ define(function (require) {
 
     summary: function () {
       // Determine id from profile check
-      var view, model, id = 0, navView;
+      var view, model, id = 0;
 
       model = new DogModel({ id: id });
-      navView = new NavView();
       view = new SummaryView({
-        model: model,
-        nav: navView
+        model: model
       });
 
       model.fetch().done(function () {
@@ -44,16 +40,14 @@ define(function (require) {
     },
 
     dogDetail: function (id) {
-      var view, dogCollection, navView;
+      var view, dogCollection;
 
       // TODO: Update to use a marionette collection view
 
       dogCollection = new DogCollection();
-      navView = new NavView();
 
       view = new DetailView({
-        collection: dogCollection,
-        nav: navView
+        collection: dogCollection
       });
 
       dogCollection.fetch().done(function () {

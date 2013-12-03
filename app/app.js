@@ -139,6 +139,14 @@ define([
 
       // Place the node into the current main container after emptying
       this.$el.html('').append(this.currentView.el);
+
+      // Insert headers and footers if applicable
+      require(['views/common/nav'], function(NavView) {
+        var navView = new NavView();
+        navView.render();
+      });
+
+
     }
   };
 

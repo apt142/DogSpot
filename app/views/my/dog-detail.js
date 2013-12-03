@@ -10,7 +10,7 @@
 define(function (require) {
   "use strict";
 
-  var $        = require('jquery'),
+  var $      = require('jquery'),
     app      = require('app'),
     Backbone = require('backbone_loader');
 
@@ -20,7 +20,6 @@ define(function (require) {
 
     initialize: function (options) {
       options = options || {};
-      this.navView = options.nav;
       this.dogCollection = options.dogCollection;
 
       // Attach a promise to this view that we can hook for a complete callback
@@ -31,11 +30,6 @@ define(function (require) {
 
     render: function () {
       var view = this;
-      view.deferred.done(function() {
-        view.navView.render();
-      });
-
-
       app.fetchTemplate(view.template).done(function (tmpl) {
         view.$el.html(tmpl({
           dogs: view.collection.toJSON()

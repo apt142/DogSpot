@@ -16,11 +16,11 @@ define(function (require) {
 
   return Backbone.View.extend({
 
-    template: 'index/welcome',
+    template: 'leaders/leaderboard',
 
     initialize: function (options) {
       options = options || {};
-      this.dogCollection = options.dogCollection;
+     this.model = options.model;
 
       // Attach a promise to this view that we can hook for a complete callback
       this.deferred = $.Deferred();
@@ -32,7 +32,7 @@ define(function (require) {
       var view = this;
       app.fetchTemplate(view.template).done(function (tmpl) {
         view.$el.html(tmpl({
-          dogs: view.collection.toJSON()
+          leaders: view.model.toJSON()
         }));
         view.deferred.resolve();
       });

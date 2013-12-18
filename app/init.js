@@ -15,8 +15,9 @@ require([
   'helpers/mock',
   'routers/index',
   'routers/dogs',
-  'routers/my'
-], function (app, $, _, Backbone, Mock, IndexRouter, DogsRouter, MyRouter) {
+  'routers/my',
+  'routers/leader'
+], function (app, $, _, Backbone, Mock, IndexRouter, DogsRouter, MyRouter, LeaderRouter) {
   "use strict";
 
   // Organize our initializers
@@ -33,9 +34,10 @@ require([
   main.init.setupRouters = function () {
     var AppRouter = Backbone.RouteManager.extend({
       routes: {
-        ''     : IndexRouter,
-        'dogs/': DogsRouter,
-        'my/'  : MyRouter
+        ''        : IndexRouter,
+        'dogs/'   : DogsRouter,
+        'my/'     : MyRouter,
+        'leader/' : LeaderRouter
       }
     });
     app.router = new AppRouter();
@@ -58,7 +60,7 @@ require([
     // the api, or may not be able to auth or have an auth token
     if (app.env() === 'test') { return false; }
 
-    // Initial session fetch could preceed this
+    // Initial session fetch could proceed this
     main.init
       .setupRouters()
       .setupMockUrls()

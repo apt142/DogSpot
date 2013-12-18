@@ -26,6 +26,9 @@ define(function (require) {
       },
       '/api/dogs/:id': {
         GET: function () { return require('text!data/dog.json'); }
+      },
+      '/api/leaders': {
+        GET: function () { return require('text!data/leaders.json'); }
       }
     }
   });

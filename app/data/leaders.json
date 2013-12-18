@@ -1,0 +1,38 @@
+{
+  "leaders": [
+    {
+      "name" : "Janis Joplin",
+      "spots" : 1100,
+      "unique_dogs" : 1088,
+      "city" : "New York"
+    },
+
+    {
+      "name" : "Frank Sinatra",
+      "spots" : 1000,
+      "unique_dogs" : 988,
+      "city" : "Chicago"
+    },
+
+    {
+      "name" : "Jimmy Carter",
+      "spots" : 568,
+      "unique_dogs" : 499,
+      "city" : "Houston"
+    },
+
+    {
+      "name" : "James Franco",
+      "spots" : 98,
+      "unique_dogs" : 98,
+      "city" : "Los Angelos"
+    },
+
+    {
+      "name" : "Gina Torres",
+      "spots" : 10,
+      "unique_dogs" : 10,
+      "city" : "Seattle"
+    }
+  ]
+}
